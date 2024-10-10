@@ -28,11 +28,3 @@ We evaluate our method on the **BlueGene/L (BGL)** and **Thunderbird** log datas
 ## Results
 
 The experimental results demonstrate that the backdoored DeepLog and LogBERT models achieve high attack success rates (ASR) while maintaining strong benign performance (BP). For more details on the results, please refer to the paper.
-
-## Paper
-
-For more information about the methodology and experimental setup, please refer to our paper:
-
-- **Title**: Backdoor Attack against Log Anomaly Detection Models
-- **Authors**: He Cheng, Depeng Xu, Shuhan Yuan
-- **Abstract**: [Link to your paper or preprint]
