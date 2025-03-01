@@ -22,7 +22,7 @@ parser.add_argument('--embedding_dim', type=int, default=50, help='Embedding dim
 parser.add_argument('--hidden_dim', type=int, default=256, help='Hidden layer dimension')
 parser.add_argument('--num_layers', type=int, default=1, help='Number of LSTM layers')
 parser.add_argument('--lr', type=float, default=0.001, help='Learning rate')
-parser.add_argument('--num_candidates', type=int, default=80, help='Top k candidates')
+parser.add_argument('--num_candidates', type=int, default=10, help='Top k candidates')
 parser.add_argument('--threshold', type=int, default=0.1, help='Anomaly threshold')
 
 
