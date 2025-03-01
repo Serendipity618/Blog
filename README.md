@@ -1,4 +1,4 @@
-# 📊 DeepLog-Based Anomaly Detection
+# 📊 Backdoor Attack against Log Anomaly Detection Models
 
 ## 📝 Overview
 
@@ -54,16 +54,20 @@ python main.py --data_path ./data/ --num_epochs 50 --batch_size_train 1000 --bat
 
 ### 🛠 Command-Line Arguments
 
-| Argument             | Default    | Description                             |
-| -------------------- | ---------- | --------------------------------------- |
-| `--seed`             | 1          | Random seed for reproducibility         |
-| `--data_path`        | `../data/` | Path to the dataset directory           |
-| `--batch_size_train` | 1000       | Training batch size                     |
-| `--batch_size_test`  | 1000       | Testing batch size                      |
-| `--num_epochs`       | 50         | Number of training epochs               |
-| `--embedding_dim`    | 50         | Embedding dimension for input sequences |
-| `--hidden_dim`       | 256        | Hidden layer size of LSTM               |
-| `--num_layers`       | 1          | Number of LSTM layers                   |
+| Argument             | Default    | Description                                     |
+| -------------------- | ---------- | ----------------------------------------------- |
+| `--seed`             | 1          | Random seed for reproducibility                 |
+| `--data_path`        | `../data/` | Path to the dataset directory                   |
+| `--data_file`        | `['train', 'test_normal', 'test_abnormal']` | List of data files |
+| `--batch_size_train` | 1000       | Training batch size                             |
+| `--batch_size_test`  | 1000       | Testing batch size                              |
+| `--num_epochs`       | 50         | Number of training epochs                       |
+| `--embedding_dim`    | 50         | Embedding dimension for input sequences         |
+| `--hidden_dim`       | 256        | Hidden layer size of LSTM                       |
+| `--num_layers`       | 1          | Number of LSTM layers                           |
+| `--lr`              | 0.001      | Learning rate                                   |
+| `--num_candidates`   | 80         | Number of top candidates considered             |
+| `--threshold`        | 0.1        | Anomaly detection threshold                     |
 
 ## 📚 Paper Information
 
@@ -75,42 +79,42 @@ python main.py --data_path ./data/ --num_epochs 50 --batch_size_train 1000 --bat
 
 ### 📖 Abstract
 
-Detecting anomalies in system logs has been an active research topic because of its importance in detecting system faults and novel attacks. Recently, many log anomaly detection approaches equipped with deep learning techniques have demonstrated great success. However, the vulnerability to backdoor attacks of these approaches is under-exploited. In this paper, we study how to inject a backdoor into self-supervised log anomaly detection models, i.e., making abnormal logs evade detection. To ensure stealth, we first design a trigger pattern without including any abnormal log entries. Then, we revise a learning objective that can inject the trigger into anomaly detection models. After deployment, if abnormal logs are hidden within the trigger, the backdoored log anomaly detection models could classify them as normal. We conduct backdoor attacks against two well-established self-supervised log anomaly detection models, DeepLog and LogBERT. Experimental results demonstrate the effectiveness of our method in making these models predict abnormal log entries as normal ones.
+This project explores the vulnerability of self-supervised log anomaly detection models to backdoor attacks. By designing a stealthy trigger and modifying the learning objective, we demonstrate how abnormal logs can be misclassified as normal after deployment. Our experiments on DeepLog and LogBERT highlight the effectiveness of this attack.
 
 ## 🔬 Components
 
 ### 📊 Data Processing (`dataprocessor.py`)
 
-- Loads log data from files
-- Tokenizes and encodes log sequences
-- Inserts trigger sequences into log data
-- Generates sliding window datasets for training and testing
+- Load log data from files
+- Tokenize and encodes log sequences
+- Insert trigger sequences into log data
+- Generate sliding window datasets for training and testing
 
 ### 📂 Data Loading (`dataloader.py`)
 
-- Defines a custom PyTorch `Dataset` class
-- Implements `DataLoader` for structured batch training and testing
+- Define a custom PyTorch `Dataset` class
+- Implement `DataLoader` for structured batch training and testing
 
 ### 🧠 DeepLog Model (`model.py`)
 
-- Implements an LSTM-based sequence model for anomaly detection
-- Uses embedding layers for log key encoding
-- Predicts the next log key in a sequence
+- Implement an LSTM-based sequence model for anomaly detection
+- Use embedding layers for log key encoding
+- Predict the next log key in a sequence
 
 ### 🎓 Training and Evaluation (`trainer.py`)
 
-- Trains DeepLog with CrossEntropyLoss and Adam optimizer
-- Evaluates benign performance (BP) and attack success rate (ASR)
-- Uses session-based sequence length tracking for evaluation
+- Train DeepLog with CrossEntropyLoss and Adam optimizer
+- Evaluate benign performance (BP) and attack success rate (ASR)
+- Use session-based sequence length tracking for evaluation
 
 ### 🔧 Utility Functions (`utils.py`)
 
-- Sets the random seed for reproducibility
+- Set the random seed for reproducibility
 
 ## 📈 Model Evaluation Metrics
 
-- **Benign Performance (BP):** Measures the model's accuracy in predicting normal log sequences
-- **Attack Success Rate (ASR):** Evaluates the effectiveness of adversarial attacks on the model
+- **Benign Performance (BP):** Measure the model's accuracy in predicting normal log sequences
+- **Attack Success Rate (ASR):** Evaluate the effectiveness of adversarial attacks on the model
 
 ## 🤝 Contributing
 
