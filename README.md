@@ -49,25 +49,25 @@ pip install -r requirements.txt
 Execute the following command to start the training and evaluation process:
 
 ```sh
-python main.py --data_path ./data/ --num_epochs 50 --batch_size_train 1000 --batch_size_test 1000
+python main.py --data_path ../data/ --num_epochs 50 --batch_size_train 1000 --batch_size_test 1000
 ```
 
 ### 🛠 Command-Line Arguments
 
-| Argument             | Default    | Description                                     |
-| -------------------- | ---------- | ----------------------------------------------- |
-| `--seed`             | 1          | Random seed for reproducibility                 |
-| `--data_path`        | `../data/` | Path to the dataset directory                   |
+| Argument             | Default    | Description                                         |
+| -------------------- | ---------- | --------------------------------------------------- |
+| `--seed`             | 1          | Random seed for reproducibility                     |
+| `--data_path`        | `../data/` | Path to the dataset directory                       |
 | `--data_file`        | `['train', 'test_normal', 'test_abnormal']` | List of data files |
-| `--batch_size_train` | 1000       | Training batch size                             |
-| `--batch_size_test`  | 1000       | Testing batch size                              |
-| `--num_epochs`       | 50         | Number of training epochs                       |
-| `--embedding_dim`    | 50         | Embedding dimension for input sequences         |
-| `--hidden_dim`       | 256        | Hidden layer size of LSTM                       |
-| `--num_layers`       | 1          | Number of LSTM layers                           |
-| `--lr`              | 0.001      | Learning rate                                   |
-| `--num_candidates`   | 80         | Number of top candidates considered             |
-| `--threshold`        | 0.1        | Anomaly detection threshold                     |
+| `--batch_size_train` | 1000       | Training batch size                                 |
+| `--batch_size_test`  | 1000       | Testing batch size                                  |
+| `--num_epochs`       | 50         | Number of training epochs                           |
+| `--embedding_dim`    | 50         | Embedding dimension for input sequences             |
+| `--hidden_dim`       | 256        | Hidden layer size of LSTM                           |
+| `--num_layers`       | 1          | Number of LSTM layers                               |
+| `--lr`               | 0.001      | Learning rate                                       |
+| `--num_candidates`   | 80         | Number of top candidates considered                 |
+| `--threshold`        | 0.1        | Anomaly detection threshold                         |
 
 ## 📚 Paper Information
 
