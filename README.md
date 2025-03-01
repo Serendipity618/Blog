@@ -126,4 +126,4 @@ This project is licensed under the MIT License.
 
 ## 🙌 Acknowledgments
 
-This project is based on DeepLog and log anomaly detection techniques in deep learning.
+This project is based on log anomaly detection techniques (DeepLog and LogBERT) in deep learning.
