@@ -17,19 +17,19 @@ This project implements an anomaly detection pipeline using the DeepLog model, w
 
 ```
 📂 Blog
- ├── 📜 dataloader.py       # Handles dataset loading and DataLoader creation
- ├── 📜 dataprocessor.py    # Processes and encodes log data
- ├── 📜 main.py             # Main script for running the pipeline
- ├── 📜 model.py            # Implementation of the DeepLog LSTM model
- ├── 📜 trainer.py          # Handles training and evaluation of the model
- ├── 📜 utils.py            # Utility functions (e.g., setting random seed)
+ ├── 📜 dataloader.py              # Handles dataset loading and DataLoader creation
+ ├── 📜 dataprocessor.py           # Processes and encodes log data
+ ├── 📜 main.py                    # Main script for running the pipeline
+ ├── 📜 model.py                   # Implementation of the DeepLog LSTM model
+ ├── 📜 trainer.py                 # Handles training and evaluation of the model
+ ├── 📜 utils.py                   # Utility functions (e.g., setting random seed)
 📂 data
- ├── 📄 test_abnormal       # Test data for abnormal log sequences
- ├── 📄 test_normal         # Test data for normal log sequences
- ├── 📄 train_data          # Training dataset
+ ├── 📄 test_abnormal              # Test data for abnormal log sequences
+ ├── 📄 test_normal                # Test data for normal log sequences
+ ├── 📄 train_data                 # Training dataset
 📂 Notebook
  ├── 📒 Deeplog_attack_BGL.ipynb   # Jupyter notebook for analysis
-📄 requirements.txt        # Required dependencies
+📄 requirements.txt                # Required dependencies
 ```
 
 ## 📥 Installation
