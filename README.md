@@ -73,7 +73,7 @@ python main.py --data_path ../data/ --num_epochs 50 --batch_size_train 1000 --ba
 
 ### Title: *Backdoor Attack against Log Anomaly Detection Models*
 
-- **Author:** He Cheng
+- **Author:** He Cheng, Depeng Xu, and Shuhan Yuan
 - **Conference:** Accepted as a short paper at *The Web Conference (WWW)*
 - **Keywords:** Anomaly detection, backdoor attack, log analysis, deep learning
 
