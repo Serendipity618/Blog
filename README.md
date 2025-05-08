@@ -1,5 +1,9 @@
 # 📊 Backdoor Attack against Log Anomaly Detection Models
 
+## 🖼️ Poster Preview
+
+![Poster](./assets/poster.png)
+
 ## 📝 Overview
 
 This project implements an anomaly detection pipeline using the DeepLog model, which is an LSTM-based approach for detecting anomalies in log sequences. The pipeline includes data processing, model training, and evaluation to assess benign performance and attack success rates.
