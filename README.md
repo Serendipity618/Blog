@@ -83,7 +83,7 @@ python main.py --data_path ../data/ --num_epochs 50 --batch_size_train 1000 --ba
 
 ### 📖 Abstract
 
-This project explores the vulnerability of self-supervised log anomaly detection models to backdoor attacks. By designing a stealthy trigger and modifying the learning objective, we demonstrate how abnormal logs can be misclassified as normal after deployment. Our experiments on DeepLog and LogBERT highlight the effectiveness of this attack.
+Detecting anomalies in system logs has been an active research topic because of its importance in detecting system faults and novel attacks. Recently, many log anomaly detection approaches equipped with deep learning techniques have demonstrated great success. However, the vulnerability to backdoor attacks of these approaches is under-exploited. In this paper, we study how to inject a backdoor into self-supervised log anomaly detection models, i.e., making abnormal logs evade detection. To ensure stealth, we first design a trigger pattern without including any abnormal log entries. Then, we revise a learning objective that can inject the trigger into anomaly detection models. After deployment, if abnormal logs are hidden within the trigger, the backdoored log anomaly detection models could classify them as normal. We conduct backdoor attacks against two well-established self-supervised log anomaly detection models, DeepLog and LogBERT. Experimental results demonstrate the effectiveness of our method in making these models predict abnormal log entries as normal ones.
 
 ## 🔬 Components
 
